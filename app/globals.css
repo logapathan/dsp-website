@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-dsp-primary: #00A36C;
+  --color-dsp-primary-dark: #008256;
+  --color-dsp-orange-bg: #FFFFFF;
+
+  --color-dsp-black: #050505;
+  --color-dsp-charcoal: #121212;
+  --color-dsp-neutral: #1A1A1A;
+  --color-dsp-light: #F3F4F6;
+
+  --font-display: var(--font-outfit);
+  --font-body: var(--font-inter);
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+}
+
+/* Custom Utilities for Glass - Light Mode */
+.glass-panel {
+  @apply backdrop-blur-xl bg-white/60 border border-gray-200 shadow-xl shadow-gray-200/50 rounded-2xl;
+}
+
+.glass-panel-frosted {
+  @apply backdrop-blur-2xl bg-white/80 border border-white/50 shadow-lg rounded-xl;
+}
+
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 163, 108, 0.2);
+}
+
+/* Base Styles */
+body {
+  @apply bg-dsp-orange-bg text-dsp-neutral font-body antialiased selection:bg-dsp-primary selection:text-white;
+  background-image:
+    radial-gradient(circle at 50% 0%, rgba(0, 163, 108, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(0, 130, 86, 0.03) 0%, transparent 40%);
+  background-attachment: fixed;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.pause-on-hover:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-display font-bold tracking-tight text-dsp-charcoal;
+}
