@@ -1,0 +1,12 @@
+name = "dsp-website"
+main = "src/index.js" # Path to your entry file (e.g., index.js, index.ts, or worker.js)
+compatibility_date = "2024-04-01"
+
+[vars]
+# Add environment variables here if you have them
+# API_KEY = "example_value"
+
+[[kv_namespaces]]
+# Only add this if you are using KV storage
+# binding = "MY_KV"
+id = "0bc4f1379866308bc2b658933b8c74f1"
